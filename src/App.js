@@ -35,7 +35,7 @@ const App = () => {
     }, []); // Optional - for exporting data as CSV file  ))
 
 
- // Example of consuming Grid Event
+ // Example of consuming Grid Event, change in Row Data (mvt mouse cursor)
  const cellClickedListener = useCallback( event => {
    console.log('cellClicked', event);
  }, []);
@@ -69,7 +69,7 @@ const App = () => {
 
            columnDefs={columnDefs} // Column Defs for Columns
            robSelection='multiple' // Optional - enables multiple row selection
-           
+
            defaultColDef={defaultColDef} // Default Column Properties
 
            animateRows={true} // Optional - set to 'true' to have rows animate when sorted
