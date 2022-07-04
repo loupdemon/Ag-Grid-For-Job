@@ -6,6 +6,8 @@ import 'ag-grid-community/dist/styles/ag-grid.css'; // Core grid CSS, always nee
 //drawing table
 import 'ag-grid-community/dist/styles/ag-theme-alpine-dark.css'; // Optional theme CSS
 
+import 'ag-grid-enterprise';
+
 const App = () => {
 
  const gridRef = useRef(); // Optional - for accessing Grid's API
@@ -63,7 +65,7 @@ const App = () => {
      <div className="ag-theme-alpine-dark" style={{width: '80%', height: 500}}>
 
        <AgGridReact
-           ref={gridRef} // Ref for accessing Grid's API
+           ref={gridRef} // Ref for accessing Grid's API "gridApi: data selected can be pushed"
 
            rowData={rowData} // Row Data for Rows
 
