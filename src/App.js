@@ -23,9 +23,9 @@ const App = () => {
      sortable: true
    }));  
    
-  //  const paginationNumberFormatter = useCallback((params) => {
-  //   return '[' + params.value.toLocaleString() + ']';
-  // }, []);
+   const paginationNumberFormatter = useCallback((params) => {
+    return '[' + params.value.toLocaleString() + ']';
+  }, []);
 
 
 
@@ -68,9 +68,9 @@ const App = () => {
 
            onCellClicked={cellClickedListener} // Optional - registering for Grid Event
 
-          //  pagination={true} // Optional - Pagination
-          //  paginationPageSize={10} // Optional - Pagination Page Size
-          //  paginationNumberFormatter={paginationNumberFormatter} // Optional - Pagination Number Formatter
+           pagination={true} // Optional - Pagination
+           paginationPageSize={10} // Optional - Pagination Page Size
+           paginationNumberFormatter={paginationNumberFormatter} // Optional - Pagination Number Formatter
 
            />
      </div>
