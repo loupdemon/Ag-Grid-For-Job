@@ -28,6 +28,10 @@ const App = () => {
   }, []);
 
 
+  const onBtExport = useCallback(() => {
+    gridRef.current.api.exportDataAsCsv();
+    }, []); // Optional - for exporting data as CSV file  ))
+
 
  // Example of consuming Grid Event
  const cellClickedListener = useCallback( event => {
@@ -50,7 +54,8 @@ const App = () => {
    <div>
 
      {/* Example using Grid's API */}
-     <button onClick={buttonListener}>Push Me</button>
+     <button onClick={buttonListener} style={{paginationBottom : '5px', fontWeight: 'bold'}}>Push Me</button>
+     <button onClick={onBtExport} style={{paginationBottom : '5px', fontWeight: 'bold'}}>Export</button>
 
      {/* On div wrapping Grid a) specify theme CSS Class Class and b) sets Grid size */}
      <div className="ag-theme-alpine" style={{width: 500, height: 500}}>
