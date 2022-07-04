@@ -68,6 +68,8 @@ const App = () => {
            rowData={rowData} // Row Data for Rows
 
            columnDefs={columnDefs} // Column Defs for Columns
+           robSelection='multiple' // Optional - enables multiple row selection
+           
            defaultColDef={defaultColDef} // Default Column Properties
 
            animateRows={true} // Optional - set to 'true' to have rows animate when sorted
