@@ -17,8 +17,8 @@ const App = () => {
  const [columnDefs, setColumnDefs] = useState([
    {field: 'athlete', editable: true},
    {field: 'age', editable: true},
-   {field: 'country', rowGroup: true},
-   {field: 'year', rowGroup: true},
+ {field: 'country'/*, rowGroup: true*/},
+   {field: 'year'/*, rowGroup: true*/},
    {field: 'date'},
    {field: 'sport'},
    {field: 'gold'},
@@ -32,6 +32,7 @@ const App = () => {
  const defaultColDef = useMemo( ()=> ({
   sortable:true, 
   filter: true,
+  enableRowGroup: true
    }));  
    
    const paginationNumberFormatter = useCallback((params) => {
@@ -75,7 +76,7 @@ const App = () => {
 
        <AgGridReact
            ref={gridRef} // Ref for accessing Grid's API "gridApi: data selected can be pushed"
-
+           rowGroupPanelShow='always' // Show Row Grouping Panel
            rowData={rowData} // Row Data for Rows
 
            columnDefs={columnDefs} // Column Defs for Columns
