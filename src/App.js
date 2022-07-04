@@ -3,7 +3,8 @@ import { render } from 'react-dom';
 import { AgGridReact } from 'ag-grid-react'; // the AG Grid React Component
 
 import 'ag-grid-community/dist/styles/ag-grid.css'; // Core grid CSS, always needed
-import 'ag-grid-community/dist/styles/ag-theme-alpine.css'; // Optional theme CSS
+//drawing table
+import 'ag-grid-community/dist/styles/ag-theme-alpine-dark.css'; // Optional theme CSS
 
 const App = () => {
 
@@ -12,9 +13,9 @@ const App = () => {
 
  // Each Column Definition results in one Column.
  const [columnDefs, setColumnDefs] = useState([
-   {field: 'make', filter: true, editable: true},
-   {field: 'model', filter: true, editable: true},
-   {field: 'price',editable: true}
+   {field: 'make', sortable:true, filter: true, editable: true},
+   {field: 'model', sortable:true, filter: true, editable: true},
+   {field: 'price', sortable:true,editable: true}
    
  ]);
 
@@ -58,7 +59,7 @@ const App = () => {
      <button onClick={onBtExport} style={{paginationBottom : '5px', fontWeight: 'bold'}}>Export</button>
 
      {/* On div wrapping Grid a) specify theme CSS Class Class and b) sets Grid size */}
-     <div className="ag-theme-alpine" style={{width: 500, height: 500}}>
+     <div className="ag-theme-alpine-dark" style={{width: '80%', height: 500}}>
 
        <AgGridReact
            ref={gridRef} // Ref for accessing Grid's API
