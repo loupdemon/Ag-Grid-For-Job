@@ -15,9 +15,16 @@ const App = () => {
 
  // Each Column Definition results in one Column.
  const [columnDefs, setColumnDefs] = useState([
-   {field: 'make'},
-   {field: 'model'},
-   {field: 'price', editable: true}
+   {field: 'athlete', editable: true},
+   {field: 'age', editable: true},
+   {field: 'country', rowGroup: true},
+   {field: 'year', rowGroup: true},
+   {field: 'date'},
+   {field: 'sport'},
+   {field: 'gold'},
+   {field: 'silver'},
+   {field: 'bronze'},
+   {field: 'total'}
    
  ]);
 
@@ -44,7 +51,9 @@ const App = () => {
 
  // Example load data from sever
  useEffect(() => {
-   fetch('https://www.ag-grid.com/example-assets/row-data.json')
+  //  fetch('https://www.ag-grid.com/example-assets/row-data.json')  //  fetch('https://www.ag-grid.com/example-assets/row-data.json')
+  fetch('https://www.ag-grid.com/example-assets/olympic-winners.json')
+
    .then(result => result.json())
    .then(rowData => setRowData(rowData))
  }, []);
