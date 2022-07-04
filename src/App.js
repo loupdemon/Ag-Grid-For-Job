@@ -13,15 +13,16 @@ const App = () => {
 
  // Each Column Definition results in one Column.
  const [columnDefs, setColumnDefs] = useState([
-   {field: 'make', sortable:true, filter: true, editable: true},
-   {field: 'model', sortable:true, filter: true, editable: true},
-   {field: 'price', sortable:true,editable: true}
+   {field: 'make'},
+   {field: 'model'},
+   {field: 'price', editable: true}
    
  ]);
 
  // DefaultColDef sets props common to all Columns
  const defaultColDef = useMemo( ()=> ({
-     sortable: true
+  sortable:true, 
+  filter: true,
    }));  
    
    const paginationNumberFormatter = useCallback((params) => {
